@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, BookOpen, BarChart2, Clock, Book, User } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md dark:bg-finloop-navy/80 border-b">
+    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-finloop-navy/80 backdrop-blur-md border-b dark:border-sidebar-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -48,6 +49,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             <Button
               className="ml-4 flex items-center gap-2"
               variant="secondary"
@@ -59,7 +61,8 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu button */}
-          <div className="flex md:hidden items-center">
+          <div className="flex md:hidden items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-muted focus:outline-none"

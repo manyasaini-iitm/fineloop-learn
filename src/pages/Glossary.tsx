@@ -8,7 +8,7 @@ const Glossary = () => {
       <Navbar />
       
       <main className="container py-6">
-        <h1 className="text-3xl font-bold mb-6">Financial Glossary</h1>
+        <h1 className="text-3xl font-bold mb-6 text-foreground">Financial Glossary</h1>
         <FinancialGlossary />
       </main>
     </div>
